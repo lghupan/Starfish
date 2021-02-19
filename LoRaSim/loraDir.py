@@ -1,3 +1,50 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+ LoRaSim: simulate collisions in LoRa
+ Copyright © 2016 Thiemo Voigt <thiemo@sics.se> and Martin Bor <m.bor@lancaster.ac.uk>
+ This work is licensed under the Creative Commons Attribution 4.0
+ International License. To view a copy of this license,
+ visit http://creativecommons.org/licenses/by/4.0/.
+ Do LoRa Low-Power Wide-Area Networks Scale? Martin Bor, Utz Roedig, Thiemo Voigt
+ and Juan Alonso, MSWiM '16, http://dx.doi.org/10.1145/2988287.2989163
+ $Date: 2016-10-17 13:23:52 +0100 (Mon, 17 Oct 2016) $
+ $Revision: 218 $
+"""
+
+"""
+ SYNOPSIS:
+   ./loraDir.py <nodes> <avgsend> <experiment> <simtime> [collision]
+ DESCRIPTION:
+    nodes
+        number of nodes to simulate
+    avgsend
+        average sending interval in milliseconds
+    experiment
+        experiment is an integer that determines with what radio settings the
+        simulation is run. All nodes are configured with a fixed transmit power
+        and a single transmit frequency, unless stated otherwise.
+        0   use the settings with the the slowest datarate (SF12, BW125, CR4/8).
+        1   similair to experiment 0, but use a random choice of 3 transmit
+            frequencies.
+        2   use the settings with the fastest data rate (SF6, BW500, CR4/5).
+        3   optimise the setting per node based on the distance to the gateway.
+        4   use the settings as defined in LoRaWAN (SF12, BW125, CR4/5).
+        5   similair to experiment 3, but also optimises the transmit power.
+    simtime
+        total running time in milliseconds
+    collision
+        set to 1 to enable the full collision check, 0 to use a simplified check.
+        With the simplified check, two messages collide when they arrive at the
+        same time, on the same frequency and spreading factor. The full collision
+        check considers the 'capture effect', whereby a collision of one or the
+ OUTPUT
+    The result of every simulation run will be appended to a file named expX.dat,
+    whereby X is the experiment number. The file contains a space separated table
+    of values for nodes, collisions, transmissions and total energy spent. The
+    data file can be easily plotted using e.g. gnuplot.
+"""
+
 import simpy
 import random
 import numpy as np
