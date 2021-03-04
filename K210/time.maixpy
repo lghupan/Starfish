@@ -1,0 +1,29 @@
+import lcd,utime,sensor,image,utime
+import KPU as kpu
+
+lcd.init(freq=15000000)
+
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+#sensor.skip_frames(time = 1000)
+
+clock = time.clock()
+img = sensor.snapshot()
+
+print(time.ticks_ms())
+img.compress(quality=50)
+print(time.ticks_ms())
+
+img=image.Image('112.jpg')
+lcd.display(img)
+img.pix_to_ai()
+task = kpu.load('k210_enc.kmodel')
+kpu.set_outputs(task,0,1024,1,1)
+
+t0=time.ticks_ms()
+print(t0)
+fmap=kpu.forward(task, img)
+t1=time.ticks_ms()
+print(t1)
+print("===", t1-t0)
