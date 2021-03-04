@@ -4,7 +4,7 @@ Code Repo for ["Starfish: Resilient Image Compression for AIoT Cameras"](https:/
 ## How to replicate
 0. Hardware requirements: 32GB RAM, 128G Disk and Nvidia GPU with 16GB RAM. Optional: K210 board which could be obtain from:
 https://www.seeedstudio.com/Sipeed-M1-dock-suit-M1-dock-2-4-inch-LCD-OV2640-K210-Dev-Board-1st-RV64-AI-board-for-Edge-Computing.html
-1. Download Dataset and trained models from
+1. Download Dataset and trained models (~8GB in total, md5=`db631866a594529141d5513a9424d215`) from https://drive.google.com/file/d/172KaUzWDaSdYPNFMV2CP9UuZN5evERKY/view?usp=sharing
 2. Create a virtual environment and install requirments `pip install -r requirements.txt`
 3. Start Jupyter notebook from current directory: `jupyter notebook`
 4. From the Web interface of Jupyter notebook, select `demo_size_quality.ipynb`. Click "Cell"-> "Run All" from the main memu to run benchmark on the size and quality of StarFish. The figure will be saved to the `Outputs` folder, which should be similar to Figure 13 (left) in the paper.
@@ -26,3 +26,12 @@ https://www.seeedstudio.com/Sipeed-M1-dock-suit-M1-dock-2-4-inch-LCD-OV2640-K210
 - demo_size_quality.ipynb: demostrate the size-quality trade-off of StarFish (as Figure 13)
 - net.py: definition and helper functions to create and evaluate DNN
 - utils.py: helper functions for matrix operation
+
+## Bibtex
+    @inproceedings{hu2020starfish,
+      title={Starfish: resilient image compression for AIoT cameras},
+      author={Hu, Pan and Im, Junha and Asgar, Zain and Katti, Sachin},
+      booktitle={Proceedings of the 18th Conference on Embedded Networked Sensor Systems},
+      pages={395--408},
+      year={2020}
+    }
