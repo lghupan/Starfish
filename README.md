@@ -1,6 +1,9 @@
 # Starfish
 Code Repo for ["Starfish: Resilient Image Compression for AIoT Cameras"](https://panhu.me/pdf/2020/Starfish.pdf)
 
+## 2021/06/11 update
+We've updated the JPEG configuration to avoid confusion about the performance gain of Starfish. Please check `demo_size_quality_optimized_jpeg.ipynb` and chapter 3 of `Dissertation_augmented_small.pdf` for a more comprehensive understanding of the Starfish work.
+
 ## How to replicate
 0. Hardware requirements: 32GB RAM, 128G Disk and Nvidia GPU with 16GB RAM. Optional: K210 board which could be obtain from:
 https://www.seeedstudio.com/Sipeed-M1-dock-suit-M1-dock-2-4-inch-LCD-OV2640-K210-Dev-Board-1st-RV64-AI-board-for-Edge-Computing.html
