@@ -1,0 +1,10 @@
+dahuffman
+matplotlib
+numpy
+Pillow
+ray
+scikit_learn
+scipy
+simpy
+skimage
+tensorflow
