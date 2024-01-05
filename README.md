@@ -8,7 +8,7 @@ We've updated the JPEG configuration to avoid confusion about the performance ga
 0. Hardware requirements: 32GB RAM, 128G Disk and Nvidia GPU with 16GB RAM. Optional: K210 board which could be obtain from:
 https://www.seeedstudio.com/Sipeed-M1-dock-suit-M1-dock-2-4-inch-LCD-OV2640-K210-Dev-Board-1st-RV64-AI-board-for-Edge-Computing.html
 1. Download Dataset and trained models (~8GB in total, md5=`db631866a594529141d5513a9424d215`) from https://drive.google.com/file/d/172KaUzWDaSdYPNFMV2CP9UuZN5evERKY/view?usp=sharing
-2. Create a virtual environment with Python 3.7 and install requirments `pip install -r requirements.txt`
+2. Create a virtual environment with Python 3.7 and install requirements with `pip install -r requirements.txt`
 3. Start Jupyter notebook from current directory: `jupyter notebook`
 4. From the Web interface of Jupyter notebook, select `demo_size_quality.ipynb`. Click "Cell"-> "Run All" from the main memu to run benchmark on the size and quality of StarFish. The figure will be saved to the `Outputs` folder, which should be similar to Figure 13 (left) in the paper.
 5. In `demo_size_quality.ipynb`, modify `train_target` and `eval_target` to 1 and 2, then re-run all cells to generate middle and right sub-figure of Figure 13.
